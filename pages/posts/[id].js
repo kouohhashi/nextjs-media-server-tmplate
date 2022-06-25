@@ -3,7 +3,6 @@ import Footer from '../../components/Footer'
 import { getAllPostIds, getPostData } from '../../lib/posts';
 // Add this import
 import Head from 'next/head';
-// import Date from '../../components/date';
 import {
   Container,
   Row,
@@ -12,14 +11,17 @@ import {
 import Image from 'next/image';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import YouTube from 'react-youtube';
-// import DraftView from '../../components/DraftView'
 import Link from 'next/link';
 import React, { useState, useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlayCircle } from '@fortawesome/free-solid-svg-icons'
-
-// Add this import at the top of the file
 import utilStyles from '../../styles/utils.module.css';
+import {
+  HEADER_TITLE,
+  // HEADER_DESCRIPTION,
+  // INDEX_TITLE,
+  // INDEX_DESCRIPTION,
+} from '../../utils/Settings'
 
 export default function Post(props) {
 
@@ -132,7 +134,8 @@ export default function Post(props) {
     <>
 
       <Head>
-      <title>喋ラボEditor | 機能追加 | {props.title}</title>
+      {/*<title>喋ラボEditor | 機能追加 | {props.title}</title>*/}
+      <title>{HEADER_TITLE} | {props.title}</title>
       <meta name="description" content={"喋ラボEditorに機能が追加されました。"+headerDescription} />
       </Head>
 
@@ -242,7 +245,7 @@ export default function Post(props) {
                        marginRight: 6,
                      }}/>
 
-                    {item.start_time === 0.01 ? "0.00" : parseFloat(item.start_time).toFixed(2)}〜
+                    {item.disp_time}〜
                   </span>
                 </Col>
                 <Col md="1" xs="12" />

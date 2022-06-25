@@ -1,9 +1,6 @@
 import Head from 'next/head'
-// import utilStyles from '../styles/utils.module.css'
-// import '../styles/index.css'
 import { getSortedPostsData } from '../lib/posts'
 import Link from 'next/link';
-// import Date from '../components/date';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   Container,
@@ -13,14 +10,20 @@ import {
 import Image from 'next/image';
 import Header from '../components/Header';
 import Footer from '../components/Footer'
+import {
+  HEADER_TITLE,
+  HEADER_DESCRIPTION,
+  INDEX_TITLE,
+  INDEX_DESCRIPTION,
+} from '../utils/Settings'
 
 export default function Home({ allPostsData }) {
   return (
     <>
 
       <Head>
-        <title>喋ラボEditor | 機能追加トップ</title>
-        <meta name="description" content={"喋ラボEditorに追加された新機能をYoutube動画とともに紹介していきます。"} />
+        <title>{HEADER_TITLE} トップ</title>
+        <meta name="description" content={HEADER_DESCRIPTION} />
       </Head>
 
 
@@ -77,14 +80,14 @@ export default function Home({ allPostsData }) {
             <h1 style={{
               fontSize: 28,
             }}>
-              喋ラボEditor機能追加履歴
+              {INDEX_TITLE}
             </h1>
             <p style={{
               marginTop: 0,
               marginBottom: 0,
               fontSize: 18,
             }}>
-              喋ラボEditorの更新履歴をちょこちょこ更新していきます。そこそこ大きめの機能追加からバグを直しましたの報告までできるだけ細かく報告をしていきたいと思います。
+            {INDEX_DESCRIPTION}
             </p>
           </Col>
           <Col md="2" xs="12" />
