@@ -85,7 +85,7 @@ const Header = (props) => {
                   color: '#cccccc'
                 }}>
                   |
-              </span>
+                </span>
               </>
             )}
 

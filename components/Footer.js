@@ -4,6 +4,9 @@ import {
   Row,
   Col,
 } from 'reactstrap';
+import {
+  COPYRIGHT,
+} from '../utils/Settings'
 
 class Footer extends Component {
 
@@ -24,7 +27,7 @@ class Footer extends Component {
           <Row style={{ marginTop : 0, }}>
             <Col style={{textAlign: 'right'}}>
 
-        
+
             </Col>
           </Row>
 
@@ -34,10 +37,10 @@ class Footer extends Component {
                   fontSize: 14,
                   color: '#ffffff',
                 }}>
-                Ⓒ	<a href="https://shabelab.com" style={{
+                Copyright Ⓒ	<a href="https://shabelab.com" style={{
                   color: '#ffffff',
                   textDecoration: 'none',
-                }}>Shabélab inc</a> all right reserved.
+                }}>{COPYRIGHT}</a> All Rights Reserved.
               </span>
             </Col>
           </Row>

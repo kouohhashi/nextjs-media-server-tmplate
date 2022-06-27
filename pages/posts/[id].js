@@ -15,7 +15,7 @@ import Link from 'next/link';
 import React, { useState, useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlayCircle } from '@fortawesome/free-solid-svg-icons'
-import utilStyles from '../../styles/utils.module.css';
+// import utilStyles from '../../styles/utils.module.css';
 import {
   HEADER_TITLE,
   // HEADER_DESCRIPTION,
@@ -338,17 +338,17 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: false,
+    // fallback: false,
+    fallback: 'blocking',
   };
 }
 
 
 export async function getStaticProps({ params }) {
 
-  console.log("getStaticProps: ", params)
-
   const postData = await getPostData(params.id);
   return {
-    props: postData
+    props: postData,
+    revalidate: 30,
   };
 }
